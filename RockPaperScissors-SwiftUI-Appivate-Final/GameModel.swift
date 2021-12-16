@@ -20,7 +20,6 @@ class GameModel {
             playerChoice == "scissors" && computerChoice == "paper" {
             return "Player Wins"
         }
-        
         return "Computer Wins"
     }
     

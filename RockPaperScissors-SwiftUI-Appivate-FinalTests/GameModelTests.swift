@@ -44,4 +44,14 @@ class GameModelTests :  XCTestCase {
         let result = sut.checkSelection(playerChoice: "rock", computerChoice: "paper")
         XCTAssertEqual(result, "Computer Wins")
     }
+    
+    func test_scissors_beats_paper_andComputerWins() {
+        let result = sut.checkSelection(playerChoice: "paper", computerChoice: "scissors")
+        XCTAssertEqual(result, "Computer Wins")
+    }
+    
+    func test_rock_beats_scissors_andComputerWins() {
+        let result = sut.checkSelection(playerChoice: "scissors", computerChoice: "rock")
+        XCTAssertEqual(result, "Computer Wins")
+    }
 }
