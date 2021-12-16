@@ -17,7 +17,10 @@ class GameViewModel {
     }
     
     func getResult(playersChoice: String) -> String {
-        let computerChoice = gameModel.setComputersChoice()
-        return gameModel.getGameResult(playerChoice: playersChoice, computerChoice: computerChoice)
+        return gameModel.setGameResult(playerChoice: playersChoice, computerChoice: getComputersChoice())
+    }
+    
+    func getComputersChoice() -> String {
+        return gameModel.setComputersChoice()
     }
 }

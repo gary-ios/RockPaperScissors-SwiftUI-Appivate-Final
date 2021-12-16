@@ -41,4 +41,10 @@ class GameViewModelTests: XCTestCase {
         let result = gameViewModel.getResult(playersChoice: "paper")
         XCTAssertEqual(result, "Player Wins")
     }
+    
+    func test_computerCanSelect_paper() {
+        let gameViewModel = GameViewModel(
+            gameModel: GameModel(answerOptions: AnswerOptions.init(options: ["paper"])))
+        XCTAssertEqual(gameViewModel.getComputersChoice(), "paper")
+    }
 }

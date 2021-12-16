@@ -16,10 +16,11 @@ class GameModel {
     }
     
     func setComputersChoice() -> String {
-        return answerOptions.options.randomElement() ?? ""
+        guard let result = answerOptions.options.randomElement() else { return ""}
+        return result
     }
     
-    func getGameResult(playerChoice: String, computerChoice: String) -> String {
+    func setGameResult(playerChoice: String, computerChoice: String) -> String {
         if playerChoice == computerChoice {
             return "Draw"
         }

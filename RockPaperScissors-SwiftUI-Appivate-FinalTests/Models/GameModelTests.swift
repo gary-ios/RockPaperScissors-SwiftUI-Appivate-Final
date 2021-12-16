@@ -21,37 +21,37 @@ class GameModelTests :  XCTestCase {
     }
     
     func test_rock_beats_scissors_andPlayerWins() {
-        let result = sut.getGameResult(playerChoice: "rock", computerChoice: "scissors")
+        let result = sut.setGameResult(playerChoice: "rock", computerChoice: "scissors")
         XCTAssertEqual(result, "Player Wins")
     }
     
     func test_scissors_beats_paper_andPlayerWins() {
-        let result = sut.getGameResult(playerChoice: "scissors", computerChoice: "paper")
+        let result = sut.setGameResult(playerChoice: "scissors", computerChoice: "paper")
         XCTAssertEqual(result, "Player Wins")
     }
     
     func test_paper_beats_rock_andPlayerWins() {
-        let result = sut.getGameResult(playerChoice: "paper", computerChoice: "rock")
+        let result = sut.setGameResult(playerChoice: "paper", computerChoice: "rock")
         XCTAssertEqual(result, "Player Wins")
     }
     
     func test_draw() {
-        let result = sut.getGameResult(playerChoice: "rock", computerChoice: "rock")
+        let result = sut.setGameResult(playerChoice: "rock", computerChoice: "rock")
         XCTAssertEqual(result, "Draw")
     }
     
     func test_paper_beats_rock_andComputerWins() {
-        let result = sut.getGameResult(playerChoice: "rock", computerChoice: "paper")
+        let result = sut.setGameResult(playerChoice: "rock", computerChoice: "paper")
         XCTAssertEqual(result, "Computer Wins")
     }
     
     func test_scissors_beats_paper_andComputerWins() {
-        let result = sut.getGameResult(playerChoice: "paper", computerChoice: "scissors")
+        let result = sut.setGameResult(playerChoice: "paper", computerChoice: "scissors")
         XCTAssertEqual(result, "Computer Wins")
     }
     
     func test_rock_beats_scissors_andComputerWins() {
-        let result = sut.getGameResult(playerChoice: "scissors", computerChoice: "rock")
+        let result = sut.setGameResult(playerChoice: "scissors", computerChoice: "rock")
         XCTAssertEqual(result, "Computer Wins")
     }
     
