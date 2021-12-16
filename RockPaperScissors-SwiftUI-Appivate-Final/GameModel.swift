@@ -9,12 +9,14 @@ import Foundation
 
 class GameModel {
     
-    func checkSelection(playerChoice: String, computerChoice: String) -> String {
-        
+    func setComputersChoice(answerOptions: [String]) -> String {
+        return answerOptions.randomElement() ?? ""
+    }
+    
+    func getGameResult(playerChoice: String, computerChoice: String) -> String {
         if playerChoice == computerChoice {
             return "Draw"
         }
-        
         if playerChoice == "rock" && computerChoice == "scissors" ||
             playerChoice == "paper" && computerChoice == "rock" ||
             playerChoice == "scissors" && computerChoice == "paper" {
@@ -22,5 +24,4 @@ class GameModel {
         }
         return "Computer Wins"
     }
-    
 }
