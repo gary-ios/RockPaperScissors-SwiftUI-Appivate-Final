@@ -9,14 +9,21 @@ import Foundation
 
 class GameModel {
     
-    func setComputersChoice(answerOptions: [String]) -> String {
-        return answerOptions.randomElement() ?? ""
+    private var answerOptions = AnswerOptions()
+    
+    init(answerOptions: AnswerOptions = AnswerOptions()) {
+        self.answerOptions = answerOptions
+    }
+    
+    func setComputersChoice() -> String {
+        return answerOptions.options.randomElement() ?? ""
     }
     
     func getGameResult(playerChoice: String, computerChoice: String) -> String {
         if playerChoice == computerChoice {
             return "Draw"
         }
+        
         if playerChoice == "rock" && computerChoice == "scissors" ||
             playerChoice == "paper" && computerChoice == "rock" ||
             playerChoice == "scissors" && computerChoice == "paper" {

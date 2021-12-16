@@ -56,8 +56,8 @@ class GameModelTests :  XCTestCase {
     }
     
     func test_computer_randomlySelectsAnswer_fromAnArray() {
-        let answerOptions: [String] = ["rock"]
-        let computersChoice = sut.setComputersChoice(answerOptions: answerOptions)
+        let stubbedSUT = GameModel(answerOptions: AnswerOptions.init(options: ["rock"]))
+        let computersChoice = stubbedSUT.setComputersChoice()
         XCTAssertEqual(computersChoice, "rock")
     }
 }
