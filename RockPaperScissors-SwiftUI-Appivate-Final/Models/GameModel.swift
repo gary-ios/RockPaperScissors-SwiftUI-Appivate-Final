@@ -16,7 +16,7 @@ class GameModel {
     }
     
     func setComputersChoice() -> String {
-        guard let result = answerOptions.options.randomElement() else { return ""}
+        guard let result = answerOptions.options.randomElement() else { return "" }
         return result
     }
     
