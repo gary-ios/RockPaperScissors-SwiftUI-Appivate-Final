@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var result = ""
-    private let gameModel = GameModel()
+    @State var result = "Select an Option to Play"
+    private let gameViewModel = GameViewModel()
     
     var body: some View {
         VStack.init(spacing: 30) {
-            Text("\(result)")
-                .font(.largeTitle)
+            Text("\(result)").font(.largeTitle)
             Button {
-                result = gameModel.getGameResult(playerChoice: "rock", computerChoice: gameModel.setComputersChoice())
+                result = gameViewModel
+                    .getResult(playersChoice: "rock")
             } label: {
                 Label("Rock", systemImage: "cube.fill")
             }
             Button {
-                result = gameModel.getGameResult(playerChoice: "paper", computerChoice: gameModel.setComputersChoice())
+                result = gameViewModel
+                    .getResult(playersChoice: "paper")
             } label: {
                 Label("Paper", systemImage: "book")
             }
             Button {
-                result = gameModel.getGameResult(playerChoice: "scissors", computerChoice: gameModel.setComputersChoice())
+                result = gameViewModel
+                    .getResult(playersChoice: "scissors")
             } label: {
                 Label("Scissors", systemImage: "scissors")
             }
