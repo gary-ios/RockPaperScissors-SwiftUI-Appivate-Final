@@ -20,18 +20,28 @@ class GameModelTests :  XCTestCase {
         try super.tearDownWithError()
     }
     
-    func test_rock_beats_scissors() {
+    func test_rock_beats_scissors_andPlayerWins() {
         let result = sut.checkSelection(playerChoice: "rock", computerChoice: "scissors")
-        XCTAssertTrue(result)
+        XCTAssertEqual(result, "Player Wins")
     }
     
-    func test_scissors_beats_paper() {
+    func test_scissors_beats_paper_andPlayerWins() {
         let result = sut.checkSelection(playerChoice: "scissors", computerChoice: "paper")
-        XCTAssertTrue(result)
+        XCTAssertEqual(result, "Player Wins")
     }
     
-    func test_paper_beats_rock() {
+    func test_paper_beats_rock_andPlayerWins() {
         let result = sut.checkSelection(playerChoice: "paper", computerChoice: "rock")
-        XCTAssertTrue(result)
+        XCTAssertEqual(result, "Player Wins")
+    }
+    
+    func test_draw() {
+        let result = sut.checkSelection(playerChoice: "rock", computerChoice: "rock")
+        XCTAssertEqual(result, "Draw")
+    }
+    
+    func test_paper_beats_rock_andComputerWins() {
+        let result = sut.checkSelection(playerChoice: "rock", computerChoice: "paper")
+        XCTAssertEqual(result, "Computer Wins")
     }
 }
