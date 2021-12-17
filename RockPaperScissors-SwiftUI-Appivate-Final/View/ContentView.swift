@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var result = "Select an Option to Play"
+    @State var result = "Select an Option"
     @State var computersChoice = "..."
     
     private let gameViewModel = GameViewModel()
@@ -24,30 +24,32 @@ struct ContentView: View {
                 computersChoice = gameViewModel
                     .getComputersChoice()
                 result = gameViewModel
-                    .getResult(playersChoice: "rock")
-                
+                    .getResult(playersChoice: "rock", computersChoice: computersChoice)
             } label: {
                 Label("Rock", systemImage: "cube.fill")
                     .frame(minWidth: 0, maxWidth: .infinity)
             }.buttonStyle(.bordered)
+            
             Button {
                 computersChoice = gameViewModel
                     .getComputersChoice()
                 result = gameViewModel
-                    .getResult(playersChoice: "paper")
+                    .getResult(playersChoice: "paper", computersChoice: computersChoice)
             } label: {
                 Label("Paper", systemImage: "book")
                     .frame(minWidth: 0, maxWidth: .infinity)
             }.buttonStyle(.bordered)
+            
             Button {
                 computersChoice = gameViewModel
                     .getComputersChoice()
                 result = gameViewModel
-                    .getResult(playersChoice: "scissors")
+                    .getResult(playersChoice: "scissors", computersChoice: computersChoice)
             } label: {
                 Label("Scissors", systemImage: "scissors")
                     .frame(minWidth: 0, maxWidth: .infinity)
             }.buttonStyle(.bordered)
+            
         }.padding([.leading, .trailing], 20)
     }
 }

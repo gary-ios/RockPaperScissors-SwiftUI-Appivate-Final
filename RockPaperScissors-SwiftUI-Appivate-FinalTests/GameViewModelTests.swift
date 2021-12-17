@@ -22,7 +22,7 @@ class GameViewModelTests: XCTestCase {
         let gameViewModel = GameViewModel(
             gameModel: GameModel(answerOptions: AnswerOptions.init(options: ["rock"])))
         
-        let result = gameViewModel.getResult(playersChoice: "rock")
+        let result = gameViewModel.getResult(playersChoice: "rock", computersChoice: gameViewModel.getComputersChoice())
         XCTAssertEqual(result, "Draw")
     }
     
@@ -30,7 +30,7 @@ class GameViewModelTests: XCTestCase {
         let gameViewModel = GameViewModel(
             gameModel: GameModel(answerOptions: AnswerOptions.init(options: ["paper"])))
         
-        let result = gameViewModel.getResult(playersChoice: "rock")
+        let result = gameViewModel.getResult(playersChoice: "rock", computersChoice: gameViewModel.getComputersChoice())
         XCTAssertEqual(result, "Computer Wins")
     }
     
@@ -38,7 +38,7 @@ class GameViewModelTests: XCTestCase {
         let gameViewModel = GameViewModel(
             gameModel: GameModel(answerOptions: AnswerOptions.init(options: ["rock"])))
         
-        let result = gameViewModel.getResult(playersChoice: "paper")
+        let result = gameViewModel.getResult(playersChoice: "paper", computersChoice: gameViewModel.getComputersChoice())
         XCTAssertEqual(result, "Player Wins")
     }
     

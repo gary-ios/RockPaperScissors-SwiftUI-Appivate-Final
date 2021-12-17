@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class GameViewModel {
     
     private var gameModel = GameModel()
@@ -16,11 +15,11 @@ class GameViewModel {
         self.gameModel = gameModel
     }
     
-    func getResult(playersChoice: String) -> String {
-        return gameModel.setGameResult(playerChoice: playersChoice, computerChoice: getComputersChoice())
-    }
-    
     func getComputersChoice() -> String {
         return gameModel.setComputersChoice()
+    }
+    
+    func getResult(playersChoice: String, computersChoice: String) -> String {
+        return gameModel.setGameResult(playerChoice: playersChoice, computerChoice: computersChoice)
     }
 }
