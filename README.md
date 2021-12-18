@@ -1,4 +1,4 @@
-# RockPaperScissors-SwiftUI-Appivate-Final Example Projct
+# RockPaperScissors-SwiftUI-Appivate-Final Example Project
 
 Rock, Paper, Scissors game Test Driven Development (TDD) tutorial built with SwiftUI.
 
